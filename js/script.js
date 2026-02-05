@@ -6,11 +6,17 @@ document.addEventListener('DOMContentLoaded', ()=>{
     navToggle.addEventListener('click', ()=>{
       const expanded = navToggle.getAttribute('aria-expanded') === 'true';
       navToggle.setAttribute('aria-expanded', String(!expanded));
-      const isHidden = mainNav.getAttribute('aria-hidden') === 'false';
-      mainNav.setAttribute('aria-hidden', String(isHidden ? 'true' : 'false'));
-      // toggle class for CSS fallback
-      mainNav.style.display = isHidden ? 'block' : 'none';
+      mainNav.classList.toggle('open');
     });
+
+    // close mobile nav when a link is clicked
+    const links = mainNav.querySelectorAll('a');
+    links.forEach(a=>a.addEventListener('click', ()=>{
+      if(mainNav.classList.contains('open')){
+        mainNav.classList.remove('open');
+        navToggle.setAttribute('aria-expanded','false');
+      }
+    }));
   }
 
   const form = document.getElementById('contact-form');
