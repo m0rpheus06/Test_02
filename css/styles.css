@@ -33,6 +33,12 @@ body{font-family:system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;
 .card{padding:1rem;border-radius:8px;border:1px solid var(--border);background:linear-gradient(180deg,#fff,#f8fcfb)}
 .card h4{margin-top:0;color:var(--accent-2)}
 
+/* company info table */
+.company-table{width:100%;border-collapse:collapse;margin-top:.75rem}
+.company-table th{width:28%;text-align:left;padding:.6rem .75rem;background:linear-gradient(90deg,var(--accent-2),var(--accent));color:#fff;font-weight:600;border-right:1px solid rgba(255,255,255,0.06)}
+.company-table td{padding:.6rem .75rem;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text);background:transparent}
+.company-table tr:nth-child(even) td{background:rgba(15,157,88,0.02)}
+
 .contact-list{list-style:none;padding:0;margin:0 0 1rem 0}
 .contact-list li{margin:.25rem 0}
 
